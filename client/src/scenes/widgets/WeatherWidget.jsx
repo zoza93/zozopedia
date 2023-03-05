@@ -90,7 +90,7 @@ const WeatherWidget = () => {
                     <Typography
                         fontWeight="500"
                     >
-                        {currentWeather.weather[0].description}
+                        {currentWeather ? currentWeather.weather[0].description : ""}
                     </Typography>
                 </Box>
                 <FlexBetween>
@@ -98,12 +98,12 @@ const WeatherWidget = () => {
                         <Typography
                             typography="h1"
                             textAlign="center">
-                            {Math.round(currentWeather.main.temp)}°C
+                            {currentWeather ? Math.round(currentWeather.main.temp) : ""}°C
                         </Typography>
                     </FlexBetween>
                     <FlexBetween>
                         <Box textAlign="center">
-                            <img alt="weather" src={`assets/icons/${currentWeather.weather[0].icon}.png`}
+                            <img alt="weather" src={`assets/icons/${currentWeather ? currentWeather.weather[0].icon : "unknown"}.png`}
                                 boxShadow="10px -2px 20px 2px rgb(255 255 255 / 30%)" />
                         </Box>
 
@@ -119,7 +119,7 @@ const WeatherWidget = () => {
                         </FlexBetween>
                         <FlexBetween>
                             <Typography>
-                                {Math.round(currentWeather.main.feels_like)}°C
+                                {currentWeather ? Math.round(currentWeather.main.feels_like) : ""}°C
                             </Typography>
                         </FlexBetween>
                     </FlexBetween>
@@ -132,7 +132,7 @@ const WeatherWidget = () => {
                         </FlexBetween>
                         <FlexBetween>
                             <Typography>
-                                {currentWeather.wind.speed}m/s
+                                {currentWeather ? currentWeather.wind.speed : ""}m/s
                             </Typography>
                         </FlexBetween>
                     </FlexBetween>
@@ -145,7 +145,7 @@ const WeatherWidget = () => {
                         </FlexBetween>
                         <FlexBetween>
                             <Typography>
-                                {currentWeather.main.humidity}%
+                                {currentWeather ? currentWeather.main.humidity : ""}%
                             </Typography>
                         </FlexBetween>
                     </FlexBetween>
@@ -158,7 +158,7 @@ const WeatherWidget = () => {
                         </FlexBetween>
                         <FlexBetween>
                             <Typography>
-                                {currentWeather.main.pressure}hPa
+                                {currentWeather ? currentWeather.main.pressure : ""}hPa
                             </Typography>
                         </FlexBetween>
                     </FlexBetween>
